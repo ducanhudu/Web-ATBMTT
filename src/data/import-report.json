@@ -1,0 +1,1633 @@
+﻿{
+    "generatedAt":  "2026-06-13T21:30:55.9782054+07:00",
+    "input":  "C:\\Users\\DucAnh\\Downloads\\Ôn tập trắc nghiệm_1_1.docx",
+    "nonEmptyParagraphs":  2662,
+    "acceptedBeforeDeduplication":  504,
+    "acceptedQuestions":  276,
+    "skippedQuestions":  37,
+    "duplicatesRemoved":  228,
+    "topics":  [
+                   {
+                       "topic":  "Mật mã học",
+                       "count":  70
+                   },
+                   {
+                       "topic":  "Nền tảng ATTT",
+                       "count":  62
+                   },
+                   {
+                       "topic":  "Tấn công mạng",
+                       "count":  61
+                   },
+                   {
+                       "topic":  "Điều khiển truy nhập",
+                       "count":  40
+                   },
+                   {
+                       "topic":  "Lỗ hổng \u0026 mã độc",
+                       "count":  27
+                   },
+                   {
+                       "topic":  "Phòng thủ hệ thống",
+                       "count":  11
+                   },
+                   {
+                       "topic":  "Quản lý ATTT",
+                       "count":  5
+                   }
+               ],
+    "skipped":  [
+                    {
+                        "line":  51,
+                        "question":  "Một trong các biện pháp cụ thể cho quản lý, khắc phục các lỗ hổng bảo mật và tăng cường khả năng đề kháng cho hệ thống là:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  246,
+                        "question":  "Các biện pháp được sử dụng để đảm bảo an toàn máy tính và dữ liệu là:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  4
+                    },
+                    {
+                        "line":  992,
+                        "question":  "Hệ mật DES xử lý từng khối “ plain text ” có độ dài :",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  2
+                    },
+                    {
+                        "line":  1082,
+                        "question":  "Danh sách điều khiển truy nhập ACL thực hiện việc quản lý quyền truy nhập đến các đối tượng cho người dùng bằng cách:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1237,
+                        "question":  "Một hệ thống điều khiển truy nhập có thể được cấu thành từ các dịch vụ nào sau đây:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  2
+                    },
+                    {
+                        "line":  1262,
+                        "question":  "Cho biết câu nào đúng trong các câu sau",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1317,
+                        "question":  "Điểm khác nhau chính giữa các hệ thống ngăn chặn đột nhập (IPS) và phát hiện đột nhập (IDS) là:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1322,
+                        "question":  "Để đánh giá điểm mạnh của hệ thống IDS người ta dựa vào các yếu tố sau :",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1327,
+                        "question":  "Khi thực hiện triển khai HIDS khó khăn gặp là",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1332,
+                        "question":  "Bộ lọc gói thực hiện chức năng nào ?",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1337,
+                        "question":  "Hệ thống nào được cài đặt trên Host để cung cấp một tính năng IDS ?",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1447,
+                        "question":  "Sâu SQL Slammer được phát hiện vào năm nào?",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1698,
+                        "question":  "Biện pháp nào không thể phòng chống hiệu quả tấn công khai thác lỗi tràn bộ đệm gồm:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1703,
+                        "question":  "Các thành phần của ATTT gồm:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1708,
+                        "question":  "Đảm bảo thông tin thường được thực hiện bằng cách",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1713,
+                        "question":  "//Chương 3 :",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  0
+                    },
+                    {
+                        "line":  1864,
+                        "question":  "Các máy tính ma/máy tính bị chiếm quyền điều khiển thường được tin tặc sử dụng để ..",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1869,
+                        "question":  "Các zombie thường được tin tặc sử dụng để…",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1874,
+                        "question":  "Dạng tấn công chèn mã được tin tặc sử dụng phổ biến trên các trang web nhắm đến các cơ sở dữ liệu là:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  0
+                    },
+                    {
+                        "line":  1879,
+                        "question":  "///Chương 4:",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  0
+                    },
+                    {
+                        "line":  2210,
+                        "question":  "An toàn thông tin gồm các lĩnh vực nào?",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  3
+                    },
+                    {
+                        "line":  2489,
+                        "question":  "Điểm khác nhau chính giữa hai loại hàm băm MDC và MAC là:",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  3
+                    },
+                    {
+                        "line":  2613,
+                        "question":  "Ưu điểm của mật khẩu một lần (OTP-One Time Password) so với mật khẩu truyền thống là:",
+                        "reason":  "Không xác định được duy nhất một đáp án đúng",
+                        "markedAnswers":  4
+                    },
+                    {
+                        "line":  2623,
+                        "question":  "Một nhiệm vụ chính của các hệ thống IDS/IPS là:",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  3
+                    },
+                    {
+                        "line":  2627,
+                        "question":  "Giám sát lưu lượng mạng hoặc các hành vi trên một hệ thống để nhận dạng các dấu hiệu của tấn công, xâm nhập",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  0
+                    },
+                    {
+                        "line":  2628,
+                        "question":  "Một ưu điểm của tường lửa có trạng thái so với tường lửa không trạng thái là:",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  2
+                    },
+                    {
+                        "line":  2631,
+                        "question":  "Phân biệt được các gói tin thuộc về các kết nối mạng khác nhau",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  1
+                    },
+                    {
+                        "line":  2633,
+                        "question":  "Một trong các dạng khóa mã (encrypted keys) được sử dụng rộng rãi trong điều khiển truy nhập là:",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  1
+                    },
+                    {
+                        "line":  2635,
+                        "question":  "Chứng chỉ số khóa công khai",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  2
+                    },
+                    {
+                        "line":  2643,
+                        "question":  "Phát hiện tấn công, xâm nhập dựa trên bất thường có tiềm năng phát hiện các loại tấn công, xâm nhập mới là do:",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  2
+                    },
+                    {
+                        "line":  2646,
+                        "question":  "Không yêu cầu xây dựng cơ sở dữ liệu các chữ ký",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  1
+                    },
+                    {
+                        "line":  2648,
+                        "question":  "Đâu là một chế độ hoạt động (Modes of Operation) của mã hóa khối?",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  2
+                    },
+                    {
+                        "line":  2651,
+                        "question":  "CBC",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  1
+                    },
+                    {
+                        "line":  2653,
+                        "question":  "Đâu là một chế độ hoạt động (Modes of Operation) của mã hóa khối?",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  3
+                    },
+                    {
+                        "line":  2657,
+                        "question":  "ECB",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  0
+                    },
+                    {
+                        "line":  2658,
+                        "question":  "Các hộp thay thế S-box trong giải thuật DES có số bít đầu vào và đầu ra tương ứng là:",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  3
+                    },
+                    {
+                        "line":  2662,
+                        "question":  "Vào 6 bít và ra 4 bít",
+                        "reason":  "Không có đúng 4 lựa chọn",
+                        "optionCount":  0
+                    }
+                ],
+    "duplicates":  [
+                       {
+                           "question":  "Trong tấn công khai thác lỗi tràn bộ đệm, tin tặc thường sử dụng một số lệnh NOP (No Operation) ở phần đầu của mã tấn công. Mục đích của việc này là để:",
+                           "firstSourceLine":  61,
+                           "duplicateSourceLine":  256,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng trong các phát biểu sau:",
+                           "firstSourceLine":  66,
+                           "duplicateSourceLine":  261,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Nguyên nhân của sự tồn tại các điểm yếu trong hệ thống có thể do:",
+                           "firstSourceLine":  81,
+                           "duplicateSourceLine":  276,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trên thực tế, có thể giảm khả năng bị tấn công nếu có thể...",
+                           "firstSourceLine":  86,
+                           "duplicateSourceLine":  281,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Lỗi tràn bộ đệm là lỗi trong khâu:",
+                           "firstSourceLine":  136,
+                           "duplicateSourceLine":  306,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là dạng lỗ hổng bảo mật thường gặp trong hệ điều hành và các phần mềm ứng dụng?",
+                           "firstSourceLine":  141,
+                           "duplicateSourceLine":  311,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng trong các phát biểu sau:",
+                           "firstSourceLine":  66,
+                           "duplicateSourceLine":  401,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Đâu là một phương pháp mã hóa:",
+                           "firstSourceLine":  727,
+                           "duplicateSourceLine":  897,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Kích thước khóa hiệu dụng của hệ mã hóa DES là:",
+                           "firstSourceLine":  817,
+                           "duplicateSourceLine":  917,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Yếu tố nào cần được sử dụng kết hợp với một thẻ thông minh để xác thực ?",
+                           "firstSourceLine":  1187,
+                           "duplicateSourceLine":  1302,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mô hình tổng quát đảm bảo an toàn thông tin và hệ thống thông tin thường gồm các lớp:",
+                           "firstSourceLine":  1,
+                           "duplicateSourceLine":  1352,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "An toàn thông tin gồm hai lĩnh vực chính là:",
+                           "firstSourceLine":  6,
+                           "duplicateSourceLine":  1357,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tại sao cần phải đảm bảo an toàn cho thông tin?",
+                           "firstSourceLine":  11,
+                           "duplicateSourceLine":  1362,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "An toàn hệ thống thông tin là:",
+                           "firstSourceLine":  16,
+                           "duplicateSourceLine":  1367,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Người sử dụng hệ thống thông tin quản lý trong mô hình 4 loại hệ thống thông tin là:",
+                           "firstSourceLine":  21,
+                           "duplicateSourceLine":  1372,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Nguyên tắc cơ bản cho đảm bảo an toàn thông tin, hệ thống và mạng là:",
+                           "firstSourceLine":  26,
+                           "duplicateSourceLine":  1377,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các nội dung rất quan trọng của quản lý an toàn thông tin là:",
+                           "firstSourceLine":  31,
+                           "duplicateSourceLine":  1382,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một thông điệp có nội dung nhạy cảm truyền trên mạng bị sửa đổi. Các thuộc tính an toàn thông tin nào bị vi phạm?",
+                           "firstSourceLine":  36,
+                           "duplicateSourceLine":  1387,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Nguy cơ bị tấn công từ chối dịch vụ (DoS) và từ chối dịch vụ phân tán (DDoS) thường gặp ở vùng nào trong 7 vùng cơ sở hạ tầng CNTT?",
+                           "firstSourceLine":  41,
+                           "duplicateSourceLine":  1392,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "An toàn thông tin (Information Security) là gì?",
+                           "firstSourceLine":  46,
+                           "duplicateSourceLine":  1397,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng trong các phát biểu sau:",
+                           "firstSourceLine":  66,
+                           "duplicateSourceLine":  1402,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Đây là một trong các biện pháp phòng chống tấn công khai thác lỗi tràn bộ đệm?",
+                           "firstSourceLine":  251,
+                           "duplicateSourceLine":  1407,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong tấn công khai thác lỗi tràn bộ đệm, tin tặc thường sử dụng một số lệnh NOP (No Operation) ở phần đầu của mã tấn công. Mục đích của việc này là để:",
+                           "firstSourceLine":  61,
+                           "duplicateSourceLine":  1412,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng trong các phát biểu sau:",
+                           "firstSourceLine":  66,
+                           "duplicateSourceLine":  1417,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các vùng bộ nhớ thường bị tràn gồm:",
+                           "firstSourceLine":  266,
+                           "duplicateSourceLine":  1422,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các thành phần chính của hệ thống máy tính gồm:",
+                           "firstSourceLine":  76,
+                           "duplicateSourceLine":  1427,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Nguyên nhân của sự tồn tại các điểm yếu trong hệ thống có thể do:",
+                           "firstSourceLine":  81,
+                           "duplicateSourceLine":  1432,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trên thực tế, có thể giảm khả năng bị tấn công nếu có thể...",
+                           "firstSourceLine":  86,
+                           "duplicateSourceLine":  1437,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Sâu SQL Slammer tấn công khai thác lỗi tràn bộ đệm trong hệ quản trị cơ sở dữ liệu:",
+                           "firstSourceLine":  91,
+                           "duplicateSourceLine":  1442,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Các lỗ hổng bảo mật thường tồn tại nhiều nhất trong thành phần nào của hệ thống:",
+                           "firstSourceLine":  291,
+                           "duplicateSourceLine":  1452,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các kỹ thuật và công cụ thường được sử dụng trong an ninh mạng bao gồm:",
+                           "firstSourceLine":  101,
+                           "duplicateSourceLine":  1457,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các thành phần của an toàn thông tin gồm:",
+                           "firstSourceLine":  106,
+                           "duplicateSourceLine":  1462,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong tấn công khai thác lỗi tràn bộ đệm, tin tặc thường sử dụng shellcode. Shellcode đó là dạng:",
+                           "firstSourceLine":  296,
+                           "duplicateSourceLine":  1467,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các yêu cầu cơ bản trong đảm bảo an toàn thông tin và an toàn hệ thống thông tin gồm:",
+                           "firstSourceLine":  111,
+                           "duplicateSourceLine":  1472,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Việc thực thi quản lý ATTT cần được thực hiện theo chu trình lặp lại là do",
+                           "firstSourceLine":  116,
+                           "duplicateSourceLine":  1477,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Hệ thống thông tin là:",
+                           "firstSourceLine":  121,
+                           "duplicateSourceLine":  1482,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Tính bí mật của thông tin có thể được đảm bảo bằng:",
+                           "firstSourceLine":  126,
+                           "duplicateSourceLine":  1487,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Lỗ hổng bảo mật (Security vulnerability) là một điểm yếu tồn tại trong một hệ thống cho phép tin tặc:",
+                           "firstSourceLine":  301,
+                           "duplicateSourceLine":  1492,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đảm bảo thông tin (Information assurance) thường được thực hiện bằng cách:",
+                           "firstSourceLine":  131,
+                           "duplicateSourceLine":  1497,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Lỗi tràn bộ đệm là lỗi trong khâu:",
+                           "firstSourceLine":  136,
+                           "duplicateSourceLine":  1502,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là dạng lỗ hổng bảo mật thường gặp trong hệ điều hành và các phần mềm ứng dụng?",
+                           "firstSourceLine":  141,
+                           "duplicateSourceLine":  1507,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Quản lý các bản vá và cập nhật phần mềm là phần việc thuộc lớp bảo vệ nào trong mô hình tổng thể đảm bảo an toàn hệ thống thông tin?",
+                           "firstSourceLine":  146,
+                           "duplicateSourceLine":  1512,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Khi khai thác lỗi tràn bộ đệm, tin tặc thường chèn mã độc, gây tràn và ghi đè để sửa đổi thành phần nào sau đây của bộ nhớ Ngăn xếp để chuyển hướng nhằm thực hiện mã độc của mình:",
+                           "firstSourceLine":  151,
+                           "duplicateSourceLine":  1517,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Khác biệt cơ bản của vi rút và sâu là:",
+                           "firstSourceLine":  406,
+                           "duplicateSourceLine":  1522,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Dạng tấn công gây ngắt quãng dịch vụ hoặc kênh truyền thông cho người dùng bình thường là:",
+                           "firstSourceLine":  411,
+                           "duplicateSourceLine":  1527,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công nghe lén là kiểu tấn công:",
+                           "firstSourceLine":  416,
+                           "duplicateSourceLine":  1532,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Dạng tấn công chặn bắt thông tin truyền trên mạng để sửa đổi hoặc lạm dụng là:",
+                           "firstSourceLine":  421,
+                           "duplicateSourceLine":  1537,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Có thể phòng chống tấn công Smurf bằng cách cấu hình các máy và router không trả lời...",
+                           "firstSourceLine":  426,
+                           "duplicateSourceLine":  1542,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một kỹ thuật tấn công Dos?",
+                           "firstSourceLine":  431,
+                           "duplicateSourceLine":  1547,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Dạng tấn công giả mạo thông tin thường để đánh lừa người dùng thông thường là:",
+                           "firstSourceLine":  436,
+                           "duplicateSourceLine":  1552,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Kỹ thuật tấn công Smurf sử dụng giao thức ICMP và Cơ chế gửi…",
+                           "firstSourceLine":  441,
+                           "duplicateSourceLine":  1557,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Pharming là kiểu tấn công vào…",
+                           "firstSourceLine":  446,
+                           "duplicateSourceLine":  1568,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đây là một công cụ kiểm tra lỗ hổng tấn công chèn mã SQL trên các website:",
+                           "firstSourceLine":  451,
+                           "duplicateSourceLine":  1573,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Khác biệt cơ bản giữa tấn công DoS và DDoS là:",
+                           "firstSourceLine":  456,
+                           "duplicateSourceLine":  1578,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mục đích chính của tấn công giả mạo địa chỉ IP là:",
+                           "firstSourceLine":  536,
+                           "duplicateSourceLine":  1583,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các máy tính ma/máy tính bị chiếm quyền điều khiển thường được tin tặc sử dụng để...",
+                           "firstSourceLine":  461,
+                           "duplicateSourceLine":  1588,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong dạng tấn công vào mật khẩu dựa trên từ điển, tin tặc đánh cắp mật khẩu của người dùng bằng cách:",
+                           "firstSourceLine":  466,
+                           "duplicateSourceLine":  1593,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các phương thức lây lan thường gặp của sâu mạng là:",
+                           "firstSourceLine":  471,
+                           "duplicateSourceLine":  1598,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đây là một kỹ thuật tấn công Dos?",
+                           "firstSourceLine":  476,
+                           "duplicateSourceLine":  1603,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công từ chối dịch vụ (Dos - Denial of Service Attacks) là dạng tấn công có khả năng...",
+                           "firstSourceLine":  481,
+                           "duplicateSourceLine":  1608,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mật khẩu an toàn trong thời điểm hiện tại là mật khẩu có:",
+                           "firstSourceLine":  486,
+                           "duplicateSourceLine":  1613,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các mối đe dọa an toàn thông tin thường gặp là:",
+                           "firstSourceLine":  156,
+                           "duplicateSourceLine":  1618,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Nguy cơ cao nhất mà một cuộc tấn công chèn mã SQL có thể gây ra cho một hệ thống là:",
+                           "firstSourceLine":  491,
+                           "duplicateSourceLine":  1623,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Macro viruses là loại viruses thường lây nhiễm vào…",
+                           "firstSourceLine":  501,
+                           "duplicateSourceLine":  1633,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công kiểu Social Engineering là dạng tấn công khai thác yếu tố nào sau đây trong hệ thống?",
+                           "firstSourceLine":  506,
+                           "duplicateSourceLine":  1638,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Câu lệnh SQL nào tin tặc thường sử dụng trong tấn công chèn mã SQL để đánh cắp các thông tin trong cơ sở dữ liệu?",
+                           "firstSourceLine":  511,
+                           "duplicateSourceLine":  1643,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phishing là một dạng của loại tấn công sử dụng...",
+                           "firstSourceLine":  516,
+                           "duplicateSourceLine":  1648,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các dạng phần mềm độc hại (malware) có khả năng tự nhân bản gồm:",
+                           "firstSourceLine":  521,
+                           "duplicateSourceLine":  1653,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các cách virus thường sử dụng để lây nhiễm vào các chương trình khác là:",
+                           "firstSourceLine":  526,
+                           "duplicateSourceLine":  1658,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong tấn công DDoS phản chiếu hay gián tiếp, có sự tham gia của một số lượng lớn máy chủ trên mạng Internet không bị tin tặc chiếm quyền điều khiển. Các máy chủ này được gọi là...",
+                           "firstSourceLine":  531,
+                           "duplicateSourceLine":  1663,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mục đích chính của tấn công giả mạo địa chỉ IP là:",
+                           "firstSourceLine":  536,
+                           "duplicateSourceLine":  1668,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trojan horses là dạng phần mềm độc hại thường giành quyền truy nhập vào các file của người dùng khai thác cơ chế điều khiển truy nhập...",
+                           "firstSourceLine":  541,
+                           "duplicateSourceLine":  1673,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các biện pháp hiệu quả để phòng chống Macro virus :",
+                           "firstSourceLine":  546,
+                           "duplicateSourceLine":  1678,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một biện pháp phòng chống SYN Floods:",
+                           "firstSourceLine":  551,
+                           "duplicateSourceLine":  1683,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Các zombie thường được tin tặc sử dụng để:",
+                           "firstSourceLine":  556,
+                           "duplicateSourceLine":  1688,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công kiểu Social Engineering có thể cho phép tin tặc:",
+                           "firstSourceLine":  561,
+                           "duplicateSourceLine":  1693,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "PGP đảm bảo tính bí mật thông điệp bằng cách sử dụng:",
+                           "firstSourceLine":  702,
+                           "duplicateSourceLine":  1714,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Số lượng thao tác trong mỗi vòng xử lý của hàm băm MD5 là:",
+                           "firstSourceLine":  707,
+                           "duplicateSourceLine":  1719,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một hệ mã hóa (cryptosystem) được cấu thành từ hai thành phần chính gồm:",
+                           "firstSourceLine":  722,
+                           "duplicateSourceLine":  1734,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Kích thước khối dữ liệu xử lý của giải thuật mã hóa AES là:",
+                           "firstSourceLine":  732,
+                           "duplicateSourceLine":  1744,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Điểm khác nhau chính giữa hai loại hàm băm MDC và MAC là:",
+                           "firstSourceLine":  737,
+                           "duplicateSourceLine":  1749,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các điểm yếu của các hệ mã hóa khóa công khai là:",
+                           "firstSourceLine":  742,
+                           "duplicateSourceLine":  1764,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Hai thuộc tính cơ bản quan trọng nhất của một hàm băm là:",
+                           "firstSourceLine":  747,
+                           "duplicateSourceLine":  1774,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Độ an toàn của hệ mật mã RSA dựa trên...",
+                           "firstSourceLine":  752,
+                           "duplicateSourceLine":  1779,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Khi sinh cặp khóa RSA, các số nguyên tố p và q nên được chọn với kích thước…",
+                           "firstSourceLine":  757,
+                           "duplicateSourceLine":  1784,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về mã hóa khóa bất đối xứng (Asymmetric key cryptography):",
+                           "firstSourceLine":  762,
+                           "duplicateSourceLine":  1789,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về mã hóa khóa đối xứng (Symmetric key cryptography):",
+                           "firstSourceLine":  767,
+                           "duplicateSourceLine":  1794,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Số lượng vòng lặp chính thực hiện xáo trộn dữ liệu theo hàm Feistel (F) trong giải thuật DES là:",
+                           "firstSourceLine":  772,
+                           "duplicateSourceLine":  1804,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các ứng dụng phổ biến của các hàm băm là để tạo chuỗi...",
+                           "firstSourceLine":  782,
+                           "duplicateSourceLine":  1814,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "PGP đảm bảo tính bí mật thông điệp bằng cách sử dụng:",
+                           "firstSourceLine":  702,
+                           "duplicateSourceLine":  1819,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Trong quá trình xử lý thông điệp đầu vào tạo chuỗi băm, số lượng vòng xử lý của hàm băm SHA1 là:",
+                           "firstSourceLine":  787,
+                           "duplicateSourceLine":  1824,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Giải thuật mã hóa AES được thiết kế dựa trên…",
+                           "firstSourceLine":  792,
+                           "duplicateSourceLine":  1829,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các điểm yếu của các hệ mã hóa khóa đối xứng là:",
+                           "firstSourceLine":  797,
+                           "duplicateSourceLine":  1834,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát biểu nào sau đây về chữ ký số là chính xác:",
+                           "firstSourceLine":  1769,
+                           "duplicateSourceLine":  1844,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các ứng dụng phổ biến của các hàm băm một chiều là để...",
+                           "firstSourceLine":  807,
+                           "duplicateSourceLine":  1849,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "PGP đảm bảo tính xác thực thông điệp bằng cách:",
+                           "firstSourceLine":  812,
+                           "duplicateSourceLine":  1859,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Nguyên tắc bảo mật tài nguyên của mô hình Bell-La Padula là:",
+                           "firstSourceLine":  1027,
+                           "duplicateSourceLine":  1880,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tính bảo mật của kỹ thuật điều khiển truy nhập sử dụng mật khẩu dựa trên:",
+                           "firstSourceLine":  1032,
+                           "duplicateSourceLine":  1885,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát hiện tấn công, xâm nhập dựa trên bất thường có tiềm năng phát hiện các loại tấn công, xâm nhập mới là do:",
+                           "firstSourceLine":  1037,
+                           "duplicateSourceLine":  1890,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các điểm yếu làm giảm hiệu quả của phát hiện tấn công, xâm nhập dựa trên bất thường là:",
+                           "firstSourceLine":  1042,
+                           "duplicateSourceLine":  1895,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát hiện tấn công, xâm nhập dựa trên bất thường dựa trên giá thiết:",
+                           "firstSourceLine":  1047,
+                           "duplicateSourceLine":  1900,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ưu điểm của điều khiển truy nhập dựa trên các đặc điểm sinh trắc học là:",
+                           "firstSourceLine":  1052,
+                           "duplicateSourceLine":  1905,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một ưu điểm của tường lửa có trạng thái so với tường lửa không trạng thái là:",
+                           "firstSourceLine":  1057,
+                           "duplicateSourceLine":  1910,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các phương pháp xử lý, phân tích dữ liệu và mô hình hoá trong phát hiện tấn công, xâm nhập dựa trên bất thường, gồm:",
+                           "firstSourceLine":  1062,
+                           "duplicateSourceLine":  1915,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát biểu nào sau đây đúng với cơ chế điều khiển truy nhập dựa trên vai trò - RBAC:",
+                           "firstSourceLine":  1067,
+                           "duplicateSourceLine":  1920,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát biểu nào sau đây đúng với cơ chế điều khiển truy nhập DAC:",
+                           "firstSourceLine":  1072,
+                           "duplicateSourceLine":  1925,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một công cụ có khả năng rà quét các lỗ hổng chèn mã SQL cho các trang web?",
+                           "firstSourceLine":  1077,
+                           "duplicateSourceLine":  1930,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tường lửa không thể chống lại...",
+                           "firstSourceLine":  1087,
+                           "duplicateSourceLine":  1940,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Sự khác biệt chính giữa hệ thống ngăn chặn xâm nhập (IPS) và hệ thống phát hiện xâm nhập (IDS) là:",
+                           "firstSourceLine":  1092,
+                           "duplicateSourceLine":  1945,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tường lửa lọc gói có thể lọc các thông tin nào trong gói tin?",
+                           "firstSourceLine":  1097,
+                           "duplicateSourceLine":  1950,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Không nên sử dụng nhiều hơn 1 phần mềm quét virus chạy ở chế độ quét theo thời gian thực trên một máy tính vì:",
+                           "firstSourceLine":  1102,
+                           "duplicateSourceLine":  1955,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Phát biểu nào sau đây đúng với cơ chế điều khiển truy nhập bắt buộc MAC:",
+                           "firstSourceLine":  1107,
+                           "duplicateSourceLine":  1960,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một loại tường lửa?",
+                           "firstSourceLine":  1112,
+                           "duplicateSourceLine":  1965,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ví điện tử Paypal là một dạng...",
+                           "firstSourceLine":  1117,
+                           "duplicateSourceLine":  1970,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Dạng xác thực sử dụng các thông tin nào dưới đây đảm bảo độ an toàn cao hơn?",
+                           "firstSourceLine":  1122,
+                           "duplicateSourceLine":  1975,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các dạng khóa mã (encrypted keys) được sử dụng rộng rãi trong điều khiển truy nhập là:",
+                           "firstSourceLine":  1127,
+                           "duplicateSourceLine":  1980,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tại sao một hệ thống phát hiện xâm nhập dựa trên chữ ký không thể phát hiện các tấn công, xâm nhập mới?",
+                           "firstSourceLine":  1132,
+                           "duplicateSourceLine":  1985,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ưu điểm của thẻ bài (token) so với thẻ thông minh (smart card) trong điều khiển truy nhập là:",
+                           "firstSourceLine":  1137,
+                           "duplicateSourceLine":  1990,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Phương pháp xác thực nào dưới đây có thể cung cấp khả năng xác thực có độ an toàn cao nhất?",
+                           "firstSourceLine":  1142,
+                           "duplicateSourceLine":  1995,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là các tính năng của kiểm soát truy nhập sử dụng tường lửa?",
+                           "firstSourceLine":  1147,
+                           "duplicateSourceLine":  2000,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ba cơ chế điều khiển truy nhập thông dụng gồm:",
+                           "firstSourceLine":  1152,
+                           "duplicateSourceLine":  2005,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mục đích chính của điều khiển truy nhập là để đảm bảo các thuộc tính an ninh của thông tin, hệ thống và các tài nguyên, gồm:",
+                           "firstSourceLine":  1157,
+                           "duplicateSourceLine":  2010,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Số lượng nhân tố (factor) xác thực sử dụng trong điều khiển truy nhập dựa trên thẻ thông minh là:",
+                           "firstSourceLine":  1162,
+                           "duplicateSourceLine":  2015,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một nhiệm vụ chính của các hệ thống IDS/IPS là:",
+                           "firstSourceLine":  1167,
+                           "duplicateSourceLine":  2020,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Hai dịch vụ quan trọng nhất của một hệ thống điều khiển truy nhập là:",
+                           "firstSourceLine":  1172,
+                           "duplicateSourceLine":  2025,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về phát hiện xâm nhập dựa trên chữ ký và phát hiện xâm nhập dựa trên bất thường:",
+                           "firstSourceLine":  1177,
+                           "duplicateSourceLine":  2030,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về dịch vụ xác thực trong điều khiển truy nhập:",
+                           "firstSourceLine":  1182,
+                           "duplicateSourceLine":  2035,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Loại tấn công nào sau đây chiếm quyền truy nhập đến tài nguyên lợi dụng cơ chế điều khiển truy nhập DAC?",
+                           "firstSourceLine":  316,
+                           "duplicateSourceLine":  2040,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là tên viết đúng của Hệ thống phát hiện đột nhập/xâm nhập?",
+                           "firstSourceLine":  321,
+                           "duplicateSourceLine":  2045,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các nhược điểm chính của điều khiển truy nhập dựa trên các đặc điểm sinh trắc học là:",
+                           "firstSourceLine":  1197,
+                           "duplicateSourceLine":  2050,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ưu điểm của mật khẩu một lần (OTP-One Time Password) so với mật khẩu truyền thống là:",
+                           "firstSourceLine":  1202,
+                           "duplicateSourceLine":  2055,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Kỹ thuật tấn công SYN Floods khai thác điểm yếu trong khâu nào trong bộ giao thức TCP/IP?",
+                           "firstSourceLine":  1207,
+                           "duplicateSourceLine":  2060,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công từ chối dịch vụ (Dos - Denial of Service Attacks) là dạng tấn công có khả năng…",
+                           "firstSourceLine":  481,
+                           "duplicateSourceLine":  2065,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các mối đe dọa an toàn thông tin thường gặp là:",
+                           "firstSourceLine":  156,
+                           "duplicateSourceLine":  2070,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các dạng phần mềm độc hại (malware) có khả năng tự nhân bản gồm:",
+                           "firstSourceLine":  521,
+                           "duplicateSourceLine":  2075,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Pharming là kiểu tấn công vào...",
+                           "firstSourceLine":  446,
+                           "duplicateSourceLine":  2080,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các máy tính ma/máy tính bị chiếm quyền điều khiển thường được tin tặc sử dụng để...",
+                           "firstSourceLine":  461,
+                           "duplicateSourceLine":  2085,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một kỹ thuật tấn công DoS?",
+                           "firstSourceLine":  431,
+                           "duplicateSourceLine":  2090,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Kỹ thuật tấn công Smurf sử dụng giao thức ICMP và cơ chế gửi…",
+                           "firstSourceLine":  441,
+                           "duplicateSourceLine":  2095,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công nghe lén là kiểu tấn công:",
+                           "firstSourceLine":  416,
+                           "duplicateSourceLine":  2100,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Dạng tấn công chặn bắt thông tin truyền trên mạng để sửa đổi hoặc lạm dụng là:",
+                           "firstSourceLine":  421,
+                           "duplicateSourceLine":  2110,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mật khẩu an toàn trong thời điểm hiện tại là mật khẩu có :",
+                           "firstSourceLine":  486,
+                           "duplicateSourceLine":  2115,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Tấn công bằng mã độc có thể gồm:",
+                           "firstSourceLine":  566,
+                           "duplicateSourceLine":  2120,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Tấn công kiểu Social Engineering có thể cho phép tin tặc :",
+                           "firstSourceLine":  561,
+                           "duplicateSourceLine":  2125,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Khác biệt cơ bản giữa tấn công DoS và DDoS là:",
+                           "firstSourceLine":  456,
+                           "duplicateSourceLine":  2130,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các cách virus thường sử dụng để lây nhiễm vào các chương trình khác là:",
+                           "firstSourceLine":  526,
+                           "duplicateSourceLine":  2135,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tại sao việc sử dụng thủ tục cơ sở dữ liệu (Stored procedure ) là một trong các biện pháp hiệu quả để ngăn chặn triệt để tấn công chèn mã SQL ?",
+                           "firstSourceLine":  571,
+                           "duplicateSourceLine":  2145,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Có thể phòng chống tấn công Smurf bằng cách cấu hình các máy và router không trả lời.",
+                           "firstSourceLine":  426,
+                           "duplicateSourceLine":  2150,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đây là một công cụ kiểm tra lỗ hổng tấn công chèn mã SQL trên các website:",
+                           "firstSourceLine":  451,
+                           "duplicateSourceLine":  2155,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một kỹ thuật tấn công DoS?",
+                           "firstSourceLine":  431,
+                           "duplicateSourceLine":  2165,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Trong các vùng hạ tầng CNTT, vùng nào có nhiều mối đe dọa nguy cơ nhất?",
+                           "firstSourceLine":  161,
+                           "duplicateSourceLine":  2185,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong các vùng hạ tầng CNTT, vùng nào có các lỗ hổng trong quản lý phần mềm ứng dụng của máy chủ?",
+                           "firstSourceLine":  166,
+                           "duplicateSourceLine":  2190,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Trong các vùng hạ tầng CNTT, vùng nào dễ bị tấn công DoS, DDoS nhất?",
+                           "firstSourceLine":  171,
+                           "duplicateSourceLine":  2195,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Lỗi tràn bộ đệm là lỗi trong khâu:",
+                           "firstSourceLine":  136,
+                           "duplicateSourceLine":  2219,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một trong các biện pháp phòng chống tấn công khai thác lỗi tràn bộ đệm?",
+                           "firstSourceLine":  582,
+                           "duplicateSourceLine":  2224,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một điểm yếu điển hình trong hệ thống điều khiển truy cập là việc sử dụng mật khẩu dễ đoán hoặc mật khẩu được lưu ở dạng rõ. Đây là điểm yếu thuộc khâu:",
+                           "firstSourceLine":  1212,
+                           "duplicateSourceLine":  2229,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Lỗ hổng bảo mật (Security vulnerability) là một điểm yếu tồn tại trong một hệ thống cho phép tin tặc:",
+                           "firstSourceLine":  301,
+                           "duplicateSourceLine":  2234,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong tấn công khai thác lỗi tràn bộ đệm, tin tặc thường sử dụng shellcode. Shellcode đó là dạng:",
+                           "firstSourceLine":  296,
+                           "duplicateSourceLine":  2239,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công kiểu Social Engineering có thể cho phép tin tặc:",
+                           "firstSourceLine":  561,
+                           "duplicateSourceLine":  2244,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các mối đe dọa an toàn thông tin thường gặp là:",
+                           "firstSourceLine":  156,
+                           "duplicateSourceLine":  2249,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tấn công kiểu Social Engineering là dạng tấn công khai thác yếu tố nào sau đây trong hệ thống?",
+                           "firstSourceLine":  506,
+                           "duplicateSourceLine":  2254,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Dạng tấn công giả mạo thông tin thường để đánh lừa người dùng thông thường là:",
+                           "firstSourceLine":  436,
+                           "duplicateSourceLine":  2259,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong tấn công DDoS phản chiếu hay gián tiếp, có sự tham gia của một số lượng lớn máy chủ trên mạng Internet không bị tin tặc chiếm quyền điều khiển. Các máy chủ này được gọi là…",
+                           "firstSourceLine":  531,
+                           "duplicateSourceLine":  2264,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các vùng bộ nhớ thường bị tràn gồm:",
+                           "firstSourceLine":  266,
+                           "duplicateSourceLine":  2269,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Để đảm bảo an toàn cho hệ thống điều khiển truy cập, một trong các biện pháp phòng chống hiệu quả là:",
+                           "firstSourceLine":  1217,
+                           "duplicateSourceLine":  2274,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Để thực hiện tấn công Smurf, tin tặc phải giả mạo địa chỉ gói tin ICMP trong yêu cầu tấn công. Tin tặc sử dụng…",
+                           "firstSourceLine":  587,
+                           "duplicateSourceLine":  2279,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Macro viruses là loại viruses thường lây nhiễm vào…",
+                           "firstSourceLine":  501,
+                           "duplicateSourceLine":  2284,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Khác biệt cơ bản của vi rút và sâu là:",
+                           "firstSourceLine":  406,
+                           "duplicateSourceLine":  2289,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mục đích chính của tấn công giả mạo địa chỉ IP là:",
+                           "firstSourceLine":  536,
+                           "duplicateSourceLine":  2294,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Việc quản lý, khắc phục các lỗ hổng bảo mật và tăng cường khả năng đề kháng cho hệ thống cần được thực hiện theo nguyên tắc chung là:",
+                           "firstSourceLine":  176,
+                           "duplicateSourceLine":  2299,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Có thể phòng chống tấn công Smurf bằng cách cấu hình các máy và router không trả lời…",
+                           "firstSourceLine":  426,
+                           "duplicateSourceLine":  2309,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các thành phần chính của hệ thống máy tính gồm:",
+                           "firstSourceLine":  76,
+                           "duplicateSourceLine":  2314,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là dạng lỗ hổng bảo mật thường gặp trong hệ điều hành và các phần mềm ứng dụng",
+                           "firstSourceLine":  141,
+                           "duplicateSourceLine":  2319,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một công cụ có khả năng rà quét các lỗ hổng chèn mã SQL cho các trang web?",
+                           "firstSourceLine":  1077,
+                           "duplicateSourceLine":  2324,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Điều khiển truy nhập dựa trên luật (Rule-based access control) được sử dụng phổ biến trong:",
+                           "firstSourceLine":  1222,
+                           "duplicateSourceLine":  2329,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát hiện tấn công, xâm nhập dựa trên bất thường dựa trên giả thiết:",
+                           "firstSourceLine":  1227,
+                           "duplicateSourceLine":  2334,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các nhược điểm chính của điều khiển truy nhập dựa trên các đặc điểm sinh trắc học là:",
+                           "firstSourceLine":  1197,
+                           "duplicateSourceLine":  2339,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát biểu nào sau đây đúng với cơ chế điều khiển truy nhập DAC:",
+                           "firstSourceLine":  1072,
+                           "duplicateSourceLine":  2344,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phát biểu nào sau đây đúng với cơ chế điều khiển truy nhập bắt buộc MAC:",
+                           "firstSourceLine":  1107,
+                           "duplicateSourceLine":  2349,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về dịch vụ xác thực trong điều khiển truy nhập:",
+                           "firstSourceLine":  1182,
+                           "duplicateSourceLine":  2354,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Hai dịch vụ quan trọng nhất của một hệ thống điều khiển truy nhập là:",
+                           "firstSourceLine":  1172,
+                           "duplicateSourceLine":  2359,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Mục đích chính của điều khiển truy nhập là để đảm bảo các thuộc tính an ninh của thông tin, hệ thống và các tài nguyên, gồm:",
+                           "firstSourceLine":  1157,
+                           "duplicateSourceLine":  2364,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tại sao một hệ thống phát hiện xâm nhập dựa trên chữ ký không thể phát hiện các tấn công, xâm nhập mới?",
+                           "firstSourceLine":  1132,
+                           "duplicateSourceLine":  2369,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ưu điểm của điều khiển truy nhập dựa trên các đặc điểm sinh trắc học là:",
+                           "firstSourceLine":  1052,
+                           "duplicateSourceLine":  2374,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các hệ thống phát hiện xâm nhập có thể thu thập dữ liệu đầu vào từ…",
+                           "firstSourceLine":  1232,
+                           "duplicateSourceLine":  2379,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Dạng xác thực sử dụng các thông tin nào dưới đây đảm bảo độ an toàn cao hơn?",
+                           "firstSourceLine":  1122,
+                           "duplicateSourceLine":  2384,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phương pháp xác thực nào dưới đây có thể cung cấp khả năng xác thực có độ an toàn cao nhất?",
+                           "firstSourceLine":  1142,
+                           "duplicateSourceLine":  2389,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về phát hiện xâm nhập dựa trên chữ ký và phát hiện xâm nhập dựa trên bất thường:",
+                           "firstSourceLine":  1177,
+                           "duplicateSourceLine":  2394,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một loại tường lửa?",
+                           "firstSourceLine":  1112,
+                           "duplicateSourceLine":  2399,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Loại tấn công nào sau đây chiếm quyền truy nhập đến tài nguyên lợi dụng cơ chế điều khiển truy nhập DAC?",
+                           "firstSourceLine":  316,
+                           "duplicateSourceLine":  2404,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Số lượng nhân tố (factor) xác thực sử dụng trong điều khiển truy nhập dựa trên thẻ thông minh là:",
+                           "firstSourceLine":  1162,
+                           "duplicateSourceLine":  2409,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ưu điểm của thẻ bài (token) so với thẻ thông minh (smart card) trong điều khiển truy nhập là:",
+                           "firstSourceLine":  1137,
+                           "duplicateSourceLine":  2414,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Danh sách điều khiển truy nhập ACL thực hiện việc quản lý quyền truy nhập đến các đối tượng cho người dùng bằng cách:",
+                           "firstSourceLine":  1935,
+                           "duplicateSourceLine":  2419,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về mã hóa khóa bất đối xứng (Asymmetric key cryptography):",
+                           "firstSourceLine":  762,
+                           "duplicateSourceLine":  2424,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Độ an toàn của hệ mật mã RSA dựa trên...",
+                           "firstSourceLine":  752,
+                           "duplicateSourceLine":  2429,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các ứng dụng phổ biến của các hàm băm một chiều là để...",
+                           "firstSourceLine":  807,
+                           "duplicateSourceLine":  2434,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Kích thước khóa hiệu dụng của hệ mã hóa DES là:",
+                           "firstSourceLine":  817,
+                           "duplicateSourceLine":  2439,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Tìm phát biểu đúng về mã hóa khóa đối xứng (Symmetric key cryptography):",
+                           "firstSourceLine":  767,
+                           "duplicateSourceLine":  2444,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong mã hóa dòng (stream cipher), dữ liệu được xử lý theo…",
+                           "firstSourceLine":  822,
+                           "duplicateSourceLine":  2454,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Một trong các điểm yếu của các hệ mã hóa khóa đối xứng là:",
+                           "firstSourceLine":  797,
+                           "duplicateSourceLine":  2459,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Khi sinh cặp khóa RSA, các số nguyên tố p và q nên được chọn với kích thước...",
+                           "firstSourceLine":  757,
+                           "duplicateSourceLine":  2464,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Một trong các điểm yếu của các hệ mã hóa khóa công khai là:",
+                           "firstSourceLine":  742,
+                           "duplicateSourceLine":  2469,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trong hệ mật mã RSA, quan hệ toán học giữa khóa công khai e và số Phi(n) là:",
+                           "firstSourceLine":  827,
+                           "duplicateSourceLine":  2474,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một phương pháp mã hóa",
+                           "firstSourceLine":  727,
+                           "duplicateSourceLine":  2479,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các giải thuật mã hóa khóa đối xứng thông dụng gồm:",
+                           "firstSourceLine":  832,
+                           "duplicateSourceLine":  2484,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Kích thước khối dữ liệu xử lý của giải thuật mã hóa AES là:",
+                           "firstSourceLine":  732,
+                           "duplicateSourceLine":  2493,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Một trong các ứng dụng phổ biến của các hàm băm là để tạo chuỗi...",
+                           "firstSourceLine":  782,
+                           "duplicateSourceLine":  2498,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Trong hệ mật mã RSA, quan hệ toán học giữa khóa riêng d và khóa công khai e là:",
+                           "firstSourceLine":  837,
+                           "duplicateSourceLine":  2503,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Giải thuật mã hóa AES được thiết kế dựa trên...",
+                           "firstSourceLine":  792,
+                           "duplicateSourceLine":  2508,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là các tính năng của kiểm soát truy nhập sử dụng tường lửa?",
+                           "firstSourceLine":  1147,
+                           "duplicateSourceLine":  2513,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Các phương pháp xử lý, phân tích dữ liệu và mô hình hoá trong phát hiện tấn công, xâm nhập dựa trên bất thường, gồm:",
+                           "firstSourceLine":  1062,
+                           "duplicateSourceLine":  2518,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ví điện tử Paypal là một dạng…",
+                           "firstSourceLine":  1117,
+                           "duplicateSourceLine":  2523,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Ba cơ chế điều khiển truy nhập thông dụng gồm:",
+                           "firstSourceLine":  1152,
+                           "duplicateSourceLine":  2528,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tường lửa lọc gói có thể lọc các thông tin nào trong gói tin?",
+                           "firstSourceLine":  1097,
+                           "duplicateSourceLine":  2533,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Phát biểu nào sau đây đúng với cơ chế điều khiển truy nhập dựa trên vai trò - RBAC:",
+                           "firstSourceLine":  1067,
+                           "duplicateSourceLine":  2538,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Sự khác biệt chính giữa hệ thống ngăn chặn xâm nhập (IPS) và hệ thống phát hiện xâm nhập (IDS) là:",
+                           "firstSourceLine":  1092,
+                           "duplicateSourceLine":  2543,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Tính bảo mật của kỹ thuật điều khiển truy nhập sử dụng mật khẩu dựa trên:",
+                           "firstSourceLine":  1032,
+                           "duplicateSourceLine":  2553,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Giải thuật mã hóa AES vận hành dựa trên một ma trận 4x4, được gọi là...",
+                           "firstSourceLine":  842,
+                           "duplicateSourceLine":  2558,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Đâu là một ứng dụng của mã hóa?",
+                           "firstSourceLine":  847,
+                           "duplicateSourceLine":  2563,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Phần xử lý chính của SHA1 làm việc trên một chuỗi được gọi là state. Kích thước của state là:",
+                           "firstSourceLine":  852,
+                           "duplicateSourceLine":  2568,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Một trong các ứng dụng phổ biến của các hàm băm một chiều là để…",
+                           "firstSourceLine":  807,
+                           "duplicateSourceLine":  2573,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Độ an toàn của hệ mật mã RSA dựa trên...",
+                           "firstSourceLine":  752,
+                           "duplicateSourceLine":  2578,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Số lượng thao tác trong mỗi vòng xử lý của hàm băm MD5 là:",
+                           "firstSourceLine":  707,
+                           "duplicateSourceLine":  2583,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Trật tự các khâu xử lý trong các vòng lặp chính của giải thuật mã hóa AES là:",
+                           "firstSourceLine":  857,
+                           "duplicateSourceLine":  2588,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Hai thuộc tính cơ bản quan trọng nhất của một hàm băm là:",
+                           "firstSourceLine":  747,
+                           "duplicateSourceLine":  2603,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Kích thước khối dữ liệu xử lý của giải thuật mã hóa AES là:",
+                           "firstSourceLine":  732,
+                           "duplicateSourceLine":  2608,
+                           "sameAnswer":  false
+                       },
+                       {
+                           "question":  "Một hệ thống điều khiển truy nhập có thể được cấu thành từ các dịch vụ nào sau đây:",
+                           "firstSourceLine":  2548,
+                           "duplicateSourceLine":  2618,
+                           "sameAnswer":  true
+                       },
+                       {
+                           "question":  "Không nên sử dụng nhiều hơn 1 phần mềm quét virus chạy ở chế độ quét theo thời gian thực trên một máy tính vì:",
+                           "firstSourceLine":  1102,
+                           "duplicateSourceLine":  2638,
+                           "sameAnswer":  false
+                       }
+                   ]
+}
