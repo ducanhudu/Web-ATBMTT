@@ -26,6 +26,7 @@ export function buildQuestionSet(
   topic: string,
   count: number,
   shouldShuffle: boolean,
+  offset = 0,
 ): Question[] {
   const filtered =
     topic === "Tất cả chủ đề"
@@ -48,5 +49,6 @@ export function buildQuestionSet(
         };
       })
     : filtered;
-  return ordered.slice(0, Math.min(count, ordered.length));
+  const safeOffset = Math.max(0, Math.min(offset, ordered.length));
+  return ordered.slice(safeOffset, Math.min(safeOffset + count, ordered.length));
 }

@@ -22,7 +22,9 @@ function readProgress(): ProgressState {
       wrongQuestionIds: parsed.wrongQuestionIds ?? [],
       bookmarkedQuestionIds: parsed.bookmarkedQuestionIds ?? [],
       sessions: parsed.sessions ?? [],
-      activeQuiz: parsed.activeQuiz ?? null,
+      activeQuiz: parsed.activeQuiz
+        ? { ...parsed.activeQuiz, config: parsed.activeQuiz.config ?? null }
+        : null,
     };
   } catch {
     return initialProgress;

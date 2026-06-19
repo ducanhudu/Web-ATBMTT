@@ -33,6 +33,7 @@ export interface ActiveQuizState {
   mode: QuizMode;
   questions: Question[];
   durationMinutes: number;
+  config: QuizConfig | null;
   currentIndex: number;
   answers: Record<string, number>;
   revealedQuestionIds: string[];
@@ -52,6 +53,7 @@ export interface QuizConfig {
   mode: QuizMode;
   topic: string;
   questionCount: number;
+  questionOffset: number;
   durationMinutes: number;
 }
 
@@ -61,4 +63,6 @@ export interface QuizResult {
   total: number;
   durationSeconds: number;
   questionIds: string[];
+  config: QuizConfig | null;
+  availableQuestionCount: number;
 }

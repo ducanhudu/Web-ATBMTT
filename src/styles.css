@@ -985,12 +985,44 @@ select:focus-visible {
   opacity: 0.32;
 }
 
+.batch-options {
+  display: grid;
+  max-height: 150px;
+  grid-template-columns: repeat(auto-fit, minmax(74px, 1fr));
+  gap: 7px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.batch-options button {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: #6f8497;
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.batch-options button:hover {
+  border-color: rgba(37, 215, 200, 0.4);
+  color: var(--text);
+}
+
+.batch-options button.selected {
+  border-color: var(--cyan);
+  color: #c7fff9;
+  background: var(--cyan-soft);
+}
+
 .time-options {
   grid-template-columns: repeat(4, 1fr);
 }
 
 .setup-summary {
   display: flex;
+  flex-wrap: wrap;
   gap: 22px;
   margin: 24px 0;
   padding: 15px;

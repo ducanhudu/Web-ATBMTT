@@ -86,12 +86,14 @@ function createActiveQuizState(
   mode: QuizMode,
   sessionQuestions: Question[],
   durationMinutes: number,
+  config: QuizConfig | null,
 ): ActiveQuizState {
   return {
     id: crypto.randomUUID(),
     mode,
     questions: sessionQuestions,
     durationMinutes,
+    config,
     currentIndex: 0,
     answers: {},
     revealedQuestionIds: [],
@@ -110,6 +112,18 @@ function getModeLabel(mode: QuizMode) {
   if (mode === "mistakes") return "Ôn câu sai";
   if (mode === "random") return "Luyện ngẫu nhiên";
   return "Ôn tập";
+}
+
+function getAvailableQuestionCount(topic: string) {
+  return questions.filter(
+    (question) => topic === ALL_TOPICS || question.topic === topic,
+  ).length;
+}
+
+function getBatchLabel(offset: number, count: number, total: number) {
+  const start = offset + 1;
+  const end = Math.min(offset + count, total);
+  return `${start}-${end}`;
 }
 
 function formatQuestionForCopy(question: Question) {
@@ -221,6 +235,7 @@ function App() {
   const [activeMode, setActiveMode] = useState<QuizMode>("review");
   const [sessionQuestions, setSessionQuestions] = useState<Question[]>([]);
   const [sessionDurationMinutes, setSessionDurationMinutes] = useState(30);
+  const [sessionConfig, setSessionConfig] = useState<QuizConfig | null>(null);
   const [result, setResult] = useState<QuizResult | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -242,13 +257,15 @@ function App() {
     mode: QuizMode,
     nextQuestions: Question[],
     durationMinutes: number,
+    config: QuizConfig | null = null,
   ) => {
     setActiveMode(mode);
     setSessionQuestions(nextQuestions);
     setSessionDurationMinutes(durationMinutes);
+    setSessionConfig(config);
     setResult(null);
     saveActiveQuiz(
-      createActiveQuizState(mode, nextQuestions, durationMinutes),
+      createActiveQuizState(mode, nextQuestions, durationMinutes, config),
     );
     setScreen("quiz");
   };
@@ -259,7 +276,11 @@ function App() {
         progress.wrongQuestionIds.includes(question.id),
       );
       if (mistakeQuestions.length === 0) return;
-      launchQuiz(mode, mistakeQuestions, Math.max(15, mistakeQuestions.length));
+      launchQuiz(
+        mode,
+        mistakeQuestions,
+        Math.max(15, mistakeQuestions.length),
+      );
       return;
     }
 
@@ -273,8 +294,9 @@ function App() {
       config.topic,
       config.questionCount,
       config.mode !== "review",
+      config.questionOffset,
     );
-    launchQuiz(config.mode, set, config.durationMinutes);
+    launchQuiz(config.mode, set, config.durationMinutes, config);
   };
 
   const resumeActiveQuiz = () => {
@@ -284,6 +306,7 @@ function App() {
     setActiveMode(draft.mode);
     setSessionQuestions(draft.questions);
     setSessionDurationMinutes(draft.durationMinutes);
+    setSessionConfig(draft.config);
     setResult(null);
     setScreen("quiz");
   };
@@ -303,6 +326,10 @@ function App() {
       total: sessionQuestions.length,
       durationSeconds,
       questionIds: sessionQuestions.map((question) => question.id),
+      config: sessionConfig,
+      availableQuestionCount: sessionConfig
+        ? getAvailableQuestionCount(sessionConfig.topic)
+        : sessionQuestions.length,
     };
     setProgress((current) => ({
       ...updateProgressWithAnswers(
@@ -315,6 +342,16 @@ function App() {
     }));
     setResult(nextResult);
     setScreen("result");
+  };
+
+  const startNextBatch = (config: QuizConfig) => {
+    const nextOffset = config.questionOffset + config.questionCount;
+    if (nextOffset >= getAvailableQuestionCount(config.topic)) return;
+
+    startQuiz({
+      ...config,
+      questionOffset: nextOffset,
+    });
   };
 
   const toggleBookmark = (questionId: string) => {
@@ -389,6 +426,7 @@ function App() {
             mode={activeMode}
             questions={sessionQuestions}
             progress={progress}
+            sessionConfig={sessionConfig}
             onBack={goHome}
             onFinish={finishQuiz}
             onAnswer={recordAnswer}
@@ -404,6 +442,7 @@ function App() {
             result={result}
             questions={sessionQuestions}
             onHome={goHome}
+            onNextBatch={startNextBatch}
             onRetry={() => {
               setResult(null);
               setScreen("quiz");
@@ -809,12 +848,22 @@ function QuizSetup({
   const [questionCount, setQuestionCount] = useState(
     safeMode === "review" ? 20 : 30,
   );
+  const [questionOffset, setQuestionOffset] = useState(0);
   const [durationMinutes, setDurationMinutes] = useState(30);
-  const available = questions.filter(
-    (question) => topic === ALL_TOPICS || question.topic === topic,
-  ).length;
+  const available = getAvailableQuestionCount(topic);
 
   const safeQuestionCount = Math.min(questionCount, available);
+  const batchOffsets =
+    safeMode === "review" && safeQuestionCount > 0
+      ? Array.from(
+          { length: Math.ceil(available / safeQuestionCount) },
+          (_, index) => index * safeQuestionCount,
+        )
+      : [];
+  const selectedQuestionOffset =
+    batchOffsets.length > 0 && batchOffsets.includes(questionOffset)
+      ? questionOffset
+      : 0;
 
   return (
     <div className="page setup-page">
@@ -854,7 +903,13 @@ function QuizSetup({
 
           <label className="field">
             <span>Chủ đề</span>
-            <select value={topic} onChange={(event) => setTopic(event.target.value)}>
+            <select
+              value={topic}
+              onChange={(event) => {
+                setTopic(event.target.value);
+                setQuestionOffset(0);
+              }}
+            >
               {topics.map((item) => (
                 <option key={item} value={item}>
                   {item}
@@ -873,7 +928,10 @@ function QuizSetup({
                   type="button"
                   className={safeQuestionCount === count ? "selected" : ""}
                   disabled={count > available}
-                  onClick={() => setQuestionCount(count)}
+                  onClick={() => {
+                    setQuestionCount(count);
+                    setQuestionOffset(0);
+                  }}
                 >
                   {count}
                 </button>
@@ -881,12 +939,35 @@ function QuizSetup({
               <button
                 type="button"
                 className={safeQuestionCount === available ? "selected" : ""}
-                onClick={() => setQuestionCount(available)}
+                onClick={() => {
+                  setQuestionCount(available);
+                  setQuestionOffset(0);
+                }}
               >
                 Tất cả
               </button>
             </div>
           </fieldset>
+
+          {safeMode === "review" && batchOffsets.length > 0 && (
+            <fieldset className="field">
+              <legend>Chọn bộ câu</legend>
+              <div className="batch-options">
+                {batchOffsets.map((offset) => (
+                  <button
+                    key={offset}
+                    type="button"
+                    className={
+                      selectedQuestionOffset === offset ? "selected" : ""
+                    }
+                    onClick={() => setQuestionOffset(offset)}
+                  >
+                    {getBatchLabel(offset, safeQuestionCount, available)}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
+          )}
 
           {safeMode === "exam" && (
             <fieldset className="field">
@@ -919,6 +1000,21 @@ function QuizSetup({
                 {safeMode === "exam" ? `${durationMinutes} phút` : "Không giới hạn"}
               </span>
             </div>
+            {safeMode === "review" && (
+              <div>
+                <FileCheck2 size={18} />
+                <span>
+                  Bộ{" "}
+                  <b>
+                    {getBatchLabel(
+                      selectedQuestionOffset,
+                      safeQuestionCount,
+                      available,
+                    )}
+                  </b>
+                </span>
+              </div>
+            )}
           </div>
 
           <button
@@ -928,6 +1024,8 @@ function QuizSetup({
                 mode: safeMode,
                 topic,
                 questionCount: safeQuestionCount,
+                questionOffset:
+                  safeMode === "review" ? selectedQuestionOffset : 0,
                 durationMinutes,
               })
             }
@@ -945,6 +1043,7 @@ interface QuizPlayerProps {
   mode: QuizMode;
   questions: Question[];
   progress: ProgressState;
+  sessionConfig: QuizConfig | null;
   activeQuiz: ActiveQuizState | null;
   onBack: () => void;
   onFinish: (
@@ -961,6 +1060,7 @@ function QuizPlayer({
   mode,
   questions: sessionQuestions,
   progress,
+  sessionConfig,
   activeQuiz,
   onBack,
   onFinish,
@@ -977,6 +1077,9 @@ function QuizPlayer({
       ? activeQuiz
       : null;
   const [draftId] = useState(() => savedDraft?.id ?? crypto.randomUUID());
+  const [draftConfig] = useState<QuizConfig | null>(
+    () => savedDraft?.config ?? sessionConfig,
+  );
   const [currentIndex, setCurrentIndex] = useState(() =>
     Math.min(savedDraft?.currentIndex ?? 0, Math.max(sessionQuestions.length - 1, 0)),
   );
@@ -1015,6 +1118,7 @@ function QuizPlayer({
       mode,
       questions: sessionQuestions,
       durationMinutes,
+      config: draftConfig,
       currentIndex,
       answers,
       revealedQuestionIds: revealedIds,
@@ -1024,6 +1128,7 @@ function QuizPlayer({
   }, [
     answers,
     currentIndex,
+    draftConfig,
     draftId,
     durationMinutes,
     elapsedSeconds,
@@ -1383,15 +1488,24 @@ function ResultScreen({
   result,
   questions: resultQuestions,
   onHome,
+  onNextBatch,
   onRetry,
 }: {
   result: QuizResult;
   questions: Question[];
   onHome: () => void;
+  onNextBatch: (config: QuizConfig) => void;
   onRetry: () => void;
 }) {
   const percentage = Math.round((result.correct / result.total) * 100);
   const unanswered = result.total - Object.keys(result.answers).length;
+  const nextBatchConfig =
+    result.config &&
+    result.config.mode === "review" &&
+    result.config.questionOffset + result.config.questionCount <
+      result.availableQuestionCount
+      ? result.config
+      : null;
   const wrongQuestions = resultQuestions.filter(
     (question) =>
       result.answers[question.id] !== undefined &&
@@ -1494,6 +1608,15 @@ function ResultScreen({
           <RefreshCw size={18} />
           Làm lại phiên này
         </button>
+        {nextBatchConfig && (
+          <button
+            className="primary-button"
+            onClick={() => onNextBatch(nextBatchConfig)}
+          >
+            Làm bộ tiếp theo
+            <ArrowRight size={18} />
+          </button>
+        )}
       </div>
     </div>
   );
