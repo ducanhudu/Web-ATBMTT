@@ -28,11 +28,24 @@ export interface SessionRecord {
   completedAt: string;
 }
 
+export interface ActiveQuizState {
+  id: string;
+  mode: QuizMode;
+  questions: Question[];
+  durationMinutes: number;
+  currentIndex: number;
+  answers: Record<string, number>;
+  revealedQuestionIds: string[];
+  elapsedSeconds: number;
+  updatedAt: string;
+}
+
 export interface ProgressState {
   answers: Record<string, AnswerRecord>;
   wrongQuestionIds: string[];
   bookmarkedQuestionIds: string[];
   sessions: SessionRecord[];
+  activeQuiz: ActiveQuizState | null;
 }
 
 export interface QuizConfig {

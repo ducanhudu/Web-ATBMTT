@@ -470,6 +470,56 @@ select:focus-visible {
   color: #718599;
 }
 
+.resume-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 18px;
+  padding: 22px 24px;
+  border: 1px solid rgba(37, 215, 200, 0.18);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(37, 215, 200, 0.08), rgba(155, 135, 255, 0.06)),
+    rgba(12, 22, 34, 0.9);
+}
+
+.resume-copy h2 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.resume-copy p {
+  max-width: 650px;
+  margin: 7px 0 0;
+  color: #7f93a6;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.resume-meta {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.resume-meta span {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--cyan);
+  background: rgba(255, 255, 255, 0.025);
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+}
+
 .section-block {
   margin-top: 42px;
 }
@@ -737,7 +787,7 @@ select:focus-visible {
 }
 
 .back-button,
-.bookmark-button {
+.question-tool-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -751,7 +801,7 @@ select:focus-visible {
 }
 
 .back-button:hover,
-.bookmark-button:hover {
+.question-tool-button:hover {
   color: var(--text);
 }
 
@@ -1114,6 +1164,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .question-meta > span {
@@ -1128,9 +1179,21 @@ select:focus-visible {
   color: #546a7e;
 }
 
-.bookmark-button {
+.question-meta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.question-tool-button {
   padding: 7px 9px;
   border-radius: 8px;
+}
+
+.question-tool-button.copied {
+  color: var(--green);
+  background: rgba(102, 217, 149, 0.08);
 }
 
 .bookmark-button.active {
@@ -1711,6 +1774,20 @@ select:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .resume-panel,
+  .resume-meta {
+    align-items: stretch;
+  }
+
+  .resume-panel {
+    display: grid;
+  }
+
+  .resume-meta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
   .mode-card {
     min-height: 205px;
   }
@@ -1805,6 +1882,14 @@ select:focus-visible {
     min-height: 220px;
   }
 
+  .resume-panel {
+    padding: 18px;
+  }
+
+  .resume-meta {
+    grid-template-columns: 1fr;
+  }
+
   .topic-list {
     grid-template-columns: 1fr;
   }
@@ -1868,7 +1953,7 @@ select:focus-visible {
     font-size: 19px;
   }
 
-  .bookmark-button {
+  .question-tool-button {
     font-size: 0;
   }
 

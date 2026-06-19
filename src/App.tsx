@@ -8,6 +8,7 @@ import {
   Check,
   CheckCircle2,
   Clock3,
+  Copy,
   FileCheck2,
   Flag,
   Home,
@@ -24,13 +25,14 @@ import {
   XCircle,
   Zap,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import rawQuestions from "./data/questions.json";
 import { questions555184 } from "./data/questions-555184";
 import { buildQuestionSet, formatDuration } from "./lib/quiz";
 import { useStoredProgress } from "./lib/storage";
 import type {
+  ActiveQuizState,
   ProgressState,
   Question,
   QuizConfig,
@@ -79,6 +81,67 @@ const modeDetails: Record<
     color: "orange",
   },
 };
+
+function createActiveQuizState(
+  mode: QuizMode,
+  sessionQuestions: Question[],
+  durationMinutes: number,
+): ActiveQuizState {
+  return {
+    id: crypto.randomUUID(),
+    mode,
+    questions: sessionQuestions,
+    durationMinutes,
+    currentIndex: 0,
+    answers: {},
+    revealedQuestionIds: [],
+    elapsedSeconds: 0,
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+function questionIdsMatch(left: Question[], right: Question[]) {
+  if (left.length !== right.length) return false;
+  return left.every((question, index) => question.id === right[index]?.id);
+}
+
+function getModeLabel(mode: QuizMode) {
+  if (mode === "exam") return "Thi thử";
+  if (mode === "mistakes") return "Ôn câu sai";
+  if (mode === "random") return "Luyện ngẫu nhiên";
+  return "Ôn tập";
+}
+
+function formatQuestionForCopy(question: Question) {
+  const correctLetter = String.fromCharCode(65 + question.correctAnswer);
+  return [
+    `Chủ đề: ${question.topic}`,
+    `Câu hỏi: ${question.question}`,
+    "",
+    ...question.options.map(
+      (option, index) => `${String.fromCharCode(65 + index)}. ${option}`,
+    ),
+    "",
+    `Đáp án đúng: ${correctLetter}. ${question.options[question.correctAnswer]}`,
+  ].join("\n");
+}
+
+async function copyTextToClipboard(text: string) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.left = "-9999px";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+}
 
 function updateProgressWithAnswers(
   current: ProgressState,
@@ -168,17 +231,35 @@ function App() {
   const accuracy =
     completedCount > 0 ? Math.round((correctCount / completedCount) * 100) : 0;
 
+  const saveActiveQuiz = useCallback(
+    (draft: ActiveQuizState | null) => {
+      setProgress((current) => ({ ...current, activeQuiz: draft }));
+    },
+    [setProgress],
+  );
+
+  const launchQuiz = (
+    mode: QuizMode,
+    nextQuestions: Question[],
+    durationMinutes: number,
+  ) => {
+    setActiveMode(mode);
+    setSessionQuestions(nextQuestions);
+    setSessionDurationMinutes(durationMinutes);
+    setResult(null);
+    saveActiveQuiz(
+      createActiveQuizState(mode, nextQuestions, durationMinutes),
+    );
+    setScreen("quiz");
+  };
+
   const openSetup = (mode: QuizMode) => {
     if (mode === "mistakes") {
       const mistakeQuestions = questions.filter((question) =>
         progress.wrongQuestionIds.includes(question.id),
       );
       if (mistakeQuestions.length === 0) return;
-      setActiveMode(mode);
-      setSessionQuestions(mistakeQuestions);
-      setSessionDurationMinutes(Math.max(15, mistakeQuestions.length));
-      setResult(null);
-      setScreen("quiz");
+      launchQuiz(mode, mistakeQuestions, Math.max(15, mistakeQuestions.length));
       return;
     }
 
@@ -193,9 +274,16 @@ function App() {
       config.questionCount,
       config.mode !== "review",
     );
-    setActiveMode(config.mode);
-    setSessionQuestions(set);
-    setSessionDurationMinutes(config.durationMinutes);
+    launchQuiz(config.mode, set, config.durationMinutes);
+  };
+
+  const resumeActiveQuiz = () => {
+    const draft = progress.activeQuiz;
+    if (!draft) return;
+
+    setActiveMode(draft.mode);
+    setSessionQuestions(draft.questions);
+    setSessionDurationMinutes(draft.durationMinutes);
     setResult(null);
     setScreen("quiz");
   };
@@ -216,14 +304,15 @@ function App() {
       durationSeconds,
       questionIds: sessionQuestions.map((question) => question.id),
     };
-    setProgress((current) =>
-      updateProgressWithAnswers(
+    setProgress((current) => ({
+      ...updateProgressWithAnswers(
         current,
         sessionQuestions,
         selectedAnswers,
         activeMode,
       ),
-    );
+      activeQuiz: null,
+    }));
     setResult(nextResult);
     setScreen("result");
   };
@@ -260,10 +349,7 @@ function App() {
             progress.bookmarkedQuestionIds.includes(question.id),
           );
           if (!bookmarked.length) return;
-          setActiveMode("review");
-          setSessionQuestions(bookmarked);
-          setResult(null);
-          setScreen("quiz");
+          launchQuiz("review", bookmarked, Math.max(15, bookmarked.length));
         }}
         mobileOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
@@ -282,6 +368,7 @@ function App() {
             accuracy={accuracy}
             progress={progress}
             onStart={openSetup}
+            onResume={resumeActiveQuiz}
             onReset={resetProgress}
           />
         )}
@@ -305,6 +392,8 @@ function App() {
             onBack={goHome}
             onFinish={finishQuiz}
             onAnswer={recordAnswer}
+            activeQuiz={progress.activeQuiz}
+            onDraftChange={saveActiveQuiz}
             onToggleBookmark={toggleBookmark}
             durationMinutes={sessionDurationMinutes}
           />
@@ -435,6 +524,7 @@ interface DashboardProps {
   accuracy: number;
   progress: ProgressState;
   onStart: (mode: QuizMode) => void;
+  onResume: () => void;
   onReset: () => void;
 }
 
@@ -444,10 +534,15 @@ function Dashboard({
   accuracy,
   progress,
   onStart,
+  onResume,
   onReset,
 }: DashboardProps) {
   const completionPercent = Math.round((completedCount / questions.length) * 100);
   const recentSessions = progress.sessions.slice(0, 4);
+  const activeQuiz = progress.activeQuiz;
+  const activeAnsweredCount = activeQuiz
+    ? Object.keys(activeQuiz.answers).length
+    : 0;
 
   return (
     <div className="page dashboard-page">
@@ -510,6 +605,34 @@ function Dashboard({
           color="green"
         />
       </section>
+
+      {activeQuiz && (
+        <section className="resume-panel">
+          <div className="resume-copy">
+            <span className="section-kicker">Phiên đang làm dở</span>
+            <h2>{getModeLabel(activeQuiz.mode)}</h2>
+            <p>
+              Đã trả lời {activeAnsweredCount}/{activeQuiz.questions.length} câu,
+              đang ở câu {activeQuiz.currentIndex + 1}. Cập nhật lúc{" "}
+              {new Date(activeQuiz.updatedAt).toLocaleTimeString("vi-VN", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+              .
+            </p>
+          </div>
+          <div className="resume-meta">
+            <span>
+              <Clock3 size={17} />
+              {formatDuration(activeQuiz.elapsedSeconds)}
+            </span>
+            <button className="primary-button" onClick={onResume}>
+              Làm tiếp
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </section>
+      )}
 
       <section className="section-block">
         <div className="section-heading">
@@ -822,12 +945,14 @@ interface QuizPlayerProps {
   mode: QuizMode;
   questions: Question[];
   progress: ProgressState;
+  activeQuiz: ActiveQuizState | null;
   onBack: () => void;
   onFinish: (
     selectedAnswers: Record<string, number>,
     durationSeconds: number,
   ) => void;
   onAnswer: (question: Question, selected: number) => void;
+  onDraftChange: (draft: ActiveQuizState | null) => void;
   onToggleBookmark: (questionId: string) => void;
   durationMinutes: number;
 }
@@ -836,21 +961,40 @@ function QuizPlayer({
   mode,
   questions: sessionQuestions,
   progress,
+  activeQuiz,
   onBack,
   onFinish,
   onAnswer,
+  onDraftChange,
   onToggleBookmark,
   durationMinutes,
 }: QuizPlayerProps) {
   const isExam = mode === "exam";
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, number>>({});
-  const [revealedIds, setRevealedIds] = useState<string[]>([]);
-  const [elapsedSeconds, setElapsedSeconds] = useState(0);
-  const [remainingSeconds, setRemainingSeconds] = useState(
-    durationMinutes * 60,
+  const savedDraft =
+    activeQuiz &&
+    activeQuiz.mode === mode &&
+    questionIdsMatch(activeQuiz.questions, sessionQuestions)
+      ? activeQuiz
+      : null;
+  const [draftId] = useState(() => savedDraft?.id ?? crypto.randomUUID());
+  const [currentIndex, setCurrentIndex] = useState(() =>
+    Math.min(savedDraft?.currentIndex ?? 0, Math.max(sessionQuestions.length - 1, 0)),
   );
+  const [answers, setAnswers] = useState<Record<string, number>>(
+    () => savedDraft?.answers ?? {},
+  );
+  const [revealedIds, setRevealedIds] = useState<string[]>(
+    () => savedDraft?.revealedQuestionIds ?? [],
+  );
+  const [elapsedSeconds, setElapsedSeconds] = useState(
+    () => savedDraft?.elapsedSeconds ?? 0,
+  );
+  const [remainingSeconds, setRemainingSeconds] = useState(
+    Math.max(0, durationMinutes * 60 - (savedDraft?.elapsedSeconds ?? 0)),
+  );
+  const [copiedQuestionId, setCopiedQuestionId] = useState<string | null>(null);
   const submittedRef = useRef(false);
+  const copyResetTimerRef = useRef<number | null>(null);
   const current = sessionQuestions[currentIndex];
 
   useEffect(() => {
@@ -864,12 +1008,112 @@ function QuizPlayer({
   }, [isExam]);
 
   useEffect(() => {
+    if (!sessionQuestions.length || submittedRef.current) return;
+
+    onDraftChange({
+      id: draftId,
+      mode,
+      questions: sessionQuestions,
+      durationMinutes,
+      currentIndex,
+      answers,
+      revealedQuestionIds: revealedIds,
+      elapsedSeconds,
+      updatedAt: new Date().toISOString(),
+    });
+  }, [
+    answers,
+    currentIndex,
+    draftId,
+    durationMinutes,
+    elapsedSeconds,
+    mode,
+    onDraftChange,
+    revealedIds,
+    sessionQuestions,
+  ]);
+
+  useEffect(() => {
     if (isExam && remainingSeconds === 0) {
       if (submittedRef.current) return;
       submittedRef.current = true;
       onFinish(answers, elapsedSeconds);
     }
   }, [answers, elapsedSeconds, isExam, onFinish, remainingSeconds]);
+
+  useEffect(() => {
+    return () => {
+      if (copyResetTimerRef.current !== null) {
+        window.clearTimeout(copyResetTimerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!current) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      const isEditing =
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.tagName === "SELECT" ||
+        target?.isContentEditable;
+
+      if (isEditing || event.ctrlKey || event.metaKey || event.altKey) return;
+
+      if (/^[1-4]$/.test(event.key)) {
+        const optionIndex = Number(event.key) - 1;
+        if (current.options[optionIndex] !== undefined) {
+          event.preventDefault();
+          if (!isExam && revealedIds.includes(current.id)) return;
+          setAnswers((currentAnswers) => ({
+            ...currentAnswers,
+            [current.id]: optionIndex,
+          }));
+          if (!isExam) {
+            setRevealedIds((ids) => [...new Set([...ids, current.id])]);
+            onAnswer(current, optionIndex);
+          }
+        }
+        return;
+      }
+
+      if (event.key === " " || event.key === "ArrowRight") {
+        const canGoForward = isExam || answers[current.id] !== undefined;
+        event.preventDefault();
+        if (!canGoForward) return;
+
+        if (currentIndex < sessionQuestions.length - 1) {
+          setCurrentIndex((value) => value + 1);
+        } else {
+          submittedRef.current = true;
+          onFinish(answers, elapsedSeconds);
+        }
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        if (currentIndex > 0) {
+          setCurrentIndex((value) => value - 1);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [
+    answers,
+    current,
+    currentIndex,
+    elapsedSeconds,
+    isExam,
+    onAnswer,
+    onFinish,
+    revealedIds,
+    sessionQuestions.length,
+  ]);
 
   if (!current) {
     return (
@@ -890,6 +1134,7 @@ function QuizPlayer({
   const isBookmarked = progress.bookmarkedQuestionIds.includes(current.id);
   const answeredCount = Object.keys(answers).length;
   const progressPercent = ((currentIndex + 1) / sessionQuestions.length) * 100;
+  const canAdvance = isExam || selected !== undefined;
 
   const chooseAnswer = (optionIndex: number) => {
     if (!isExam && isRevealed) return;
@@ -904,12 +1149,25 @@ function QuizPlayer({
   };
 
   const nextQuestion = () => {
+    if (!canAdvance) return;
     if (currentIndex < sessionQuestions.length - 1) {
       setCurrentIndex((value) => value + 1);
     } else {
       submittedRef.current = true;
       onFinish(answers, elapsedSeconds);
     }
+  };
+
+  const copyCurrentQuestion = async () => {
+    await copyTextToClipboard(formatQuestionForCopy(current));
+    setCopiedQuestionId(current.id);
+    if (copyResetTimerRef.current !== null) {
+      window.clearTimeout(copyResetTimerRef.current);
+    }
+    copyResetTimerRef.current = window.setTimeout(() => {
+      setCopiedQuestionId(null);
+      copyResetTimerRef.current = null;
+    }, 1600);
   };
 
   return (
@@ -940,18 +1198,36 @@ function QuizPlayer({
               Câu {currentIndex + 1}
               <small>/ {sessionQuestions.length}</small>
             </span>
-            <button
-              className={`bookmark-button ${isBookmarked ? "active" : ""}`}
-              onClick={() => onToggleBookmark(current.id)}
-              aria-label={isBookmarked ? "Bỏ đánh dấu" : "Đánh dấu câu hỏi"}
-            >
-              {isBookmarked ? (
-                <BookmarkCheck size={20} />
-              ) : (
-                <Bookmark size={20} />
-              )}
-              {isBookmarked ? "Đã lưu" : "Đánh dấu"}
-            </button>
+            <div className="question-meta-actions">
+              <button
+                className={`question-tool-button ${
+                  copiedQuestionId === current.id ? "copied" : ""
+                }`}
+                onClick={copyCurrentQuestion}
+                aria-label="Sao chép câu hỏi và đáp án"
+              >
+                {copiedQuestionId === current.id ? (
+                  <Check size={20} />
+                ) : (
+                  <Copy size={20} />
+                )}
+                {copiedQuestionId === current.id ? "Đã copy" : "Sao chép"}
+              </button>
+              <button
+                className={`question-tool-button bookmark-button ${
+                  isBookmarked ? "active" : ""
+                }`}
+                onClick={() => onToggleBookmark(current.id)}
+                aria-label={isBookmarked ? "Bỏ đánh dấu" : "Đánh dấu câu hỏi"}
+              >
+                {isBookmarked ? (
+                  <BookmarkCheck size={20} />
+                ) : (
+                  <Bookmark size={20} />
+                )}
+                {isBookmarked ? "Đã lưu" : "Đánh dấu"}
+              </button>
+            </div>
           </div>
 
           <h1>{current.question}</h1>
@@ -1020,7 +1296,11 @@ function QuizPlayer({
             <button
               className="secondary-button"
               disabled={currentIndex === 0}
-              onClick={() => setCurrentIndex((value) => value - 1)}
+              onClick={() => {
+                if (currentIndex > 0) {
+                  setCurrentIndex((value) => value - 1);
+                }
+              }}
             >
               <ArrowLeft size={18} />
               Câu trước

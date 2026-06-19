@@ -8,6 +8,7 @@ const initialProgress: ProgressState = {
   wrongQuestionIds: [],
   bookmarkedQuestionIds: [],
   sessions: [],
+  activeQuiz: null,
 };
 
 function readProgress(): ProgressState {
@@ -21,6 +22,7 @@ function readProgress(): ProgressState {
       wrongQuestionIds: parsed.wrongQuestionIds ?? [],
       bookmarkedQuestionIds: parsed.bookmarkedQuestionIds ?? [],
       sessions: parsed.sessions ?? [],
+      activeQuiz: parsed.activeQuiz ?? null,
     };
   } catch {
     return initialProgress;
