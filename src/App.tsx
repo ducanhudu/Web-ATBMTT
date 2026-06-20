@@ -127,7 +127,6 @@ function getBatchLabel(offset: number, count: number, total: number) {
 }
 
 function formatQuestionForCopy(question: Question) {
-  const correctLetter = String.fromCharCode(65 + question.correctAnswer);
   return [
     `Chủ đề: ${question.topic}`,
     `Câu hỏi: ${question.question}`,
@@ -135,8 +134,6 @@ function formatQuestionForCopy(question: Question) {
     ...question.options.map(
       (option, index) => `${String.fromCharCode(65 + index)}. ${option}`,
     ),
-    "",
-    `Đáp án đúng: ${correctLetter}. ${question.options[question.correctAnswer]}`,
   ].join("\n");
 }
 
